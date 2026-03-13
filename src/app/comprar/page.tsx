@@ -21,7 +21,7 @@ export default function ComprarPage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen pt-24 pb-16 bg-white">
+      <main className="min-h-screen pb-16 bg-white">
         {/* Hero */}
         <section className="border-b border-[var(--border)] bg-[var(--card-bg)] py-16">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
