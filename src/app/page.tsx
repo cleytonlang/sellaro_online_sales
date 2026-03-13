@@ -1,6 +1,7 @@
 import { Header } from "@/components/Header";
 import { SalesBanner } from "@/components/SalesBanner";
 import { StickySalesCTA } from "@/components/StickySalesCTA";
+import { SellaroWidget } from "@/components/SellaroWidget";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/Hero";
 import { FeatureCards } from "@/components/FeatureCards";
@@ -35,6 +36,7 @@ export default function Home() {
         <DownloadCTA />
       </main>
       <StickySalesCTA />
+      <SellaroWidget />
       <Footer />
     </>
   );

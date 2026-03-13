@@ -52,3 +52,160 @@ body {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+/* Sellaro AI Widget */
+.sellaro-widget-launcher {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 999998;
+}
+
+.sellaro-widget-label {
+  background: white;
+  color: #374151;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 14px;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease;
+}
+
+.sellaro-widget-label:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.sellaro-widget-button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex-shrink: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.sellaro-widget-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.5);
+}
+
+.sellaro-widget-modal {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 400px;
+  min-width: 400px;
+  max-width: calc(100vw - 40px);
+  height: 80vh;
+  min-height: 700px;
+  max-height: calc(100vh - 40px);
+  z-index: 999999;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(20px) scale(0.95);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+}
+
+.sellaro-widget-modal.sellaro-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+}
+
+.sellaro-widget-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.sellaro-widget-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.1);
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.sellaro-widget-close:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.sellaro-widget-close::before,
+.sellaro-widget-close::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 2px;
+  background: #374151;
+}
+
+.sellaro-widget-close::before {
+  transform: rotate(45deg);
+}
+
+.sellaro-widget-close::after {
+  transform: rotate(-45deg);
+}
+
+.sellaro-widget-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+@media (max-width: 640px) {
+  .sellaro-widget-launcher {
+    bottom: 16px;
+    right: 16px;
+  }
+
+  .sellaro-widget-modal {
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 0;
+  }
+
+  .sellaro-widget-modal.sellaro-open {
+    transform: translateY(0) scale(1);
+  }
+
+  .sellaro-widget-container {
+    border-radius: 0;
+  }
+}
